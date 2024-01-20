@@ -29,7 +29,32 @@ export async function resolveUnstoppableDomain(domain) {
 
     try {
       const response = await axios.get(url, {headers});
-      return response.data;
+
+      return response.data.meta.owner;
+    } catch (error) {
+      throw error;
+    }
+  } else {
+    return undefined;
+  }
+}
+export async function reverseResolveAddress(address) {
+  if (isEthereumAddress(address)) {
+    const url = `https://api.unstoppabledomains.com/resolve/reverse/${address}`;
+    const headers = {
+      Authorization: `Bearer 8cpvqmldkyhbbheoupgx6cgjjvnpvnoih9exsrrmqrlamtcw`,
+    };
+
+    try {
+      const response = await axios.get(url, {headers});
+      if (
+        response.data.meta.domain === "" ||
+        response.data.meta.domain === null
+      ) {
+        return undefined;
+      } else {
+        return response.data.meta.domain;
+      }
     } catch (error) {
       throw error;
     }
