@@ -89,9 +89,11 @@ const VideoV2 = () => {
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content text-center">
         <div className="max-w-md">
-          <h1 className="text-5xl text-primary font-bold mb-[40px]">
-            Call your UD fren
-          </h1>
+          {data?.incoming[0]?.status !== VideoCallStatus.CONNECTED && (
+            <h1 className="text-5xl text-primary font-bold mb-[40px]">
+              Call your UD fren
+            </h1>
+          )}
 
           {isConnected ? (
             <div>

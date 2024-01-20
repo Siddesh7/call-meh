@@ -39,7 +39,7 @@ const AudioPlayer = ({stream, onEnd, onMute, audioState, peerAddress}) => {
   };
 
   return (
-    <div className="mockup-phone border-primary">
+    <div className=" border-primary w-full h-full">
       <div className="camera"></div>
       <div className="display">
         <div className="artboard artboard-demo phone-1 flex flex-col justify-between py-[50px]">
