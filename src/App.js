@@ -112,7 +112,7 @@ const VideoV2 = () => {
                           }
                         }}
                         value={recipient}
-                        placeholder="recipient address"
+                        placeholder="UD domain"
                         type="text"
                         className="input input-bordered input-primary w-full max-w-xs my-[20px]"
                       />
