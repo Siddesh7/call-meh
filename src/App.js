@@ -7,7 +7,7 @@ import {
   video,
 } from "@pushprotocol/restapi";
 import AudioPlayer from "./components/AudioPlayer";
-import IncomingCall from "./components/IncomingCall";
+import IncomingCall from "./components/incomingCall";
 import {getAddress} from "viem";
 import {isEthereumAddress, resolveUnstoppableDomain} from "./util";
 import {ConnectButton} from "@rainbow-me/rainbowkit";
