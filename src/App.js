@@ -23,7 +23,7 @@ const VideoV2 = () => {
   const [recipient, setRecipient] = useState();
   const initializePushAPI = async () => {
     const userAlice = await PushAPI.initialize(signer, {
-      env: CONSTANTS.ENV.DEV,
+      env: CONSTANTS.ENV.PROD,
     });
     const createdStream = await userAlice.initStream([
       CONSTANTS.STREAM.VIDEO,
