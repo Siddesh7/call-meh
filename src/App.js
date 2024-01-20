@@ -73,10 +73,6 @@ const VideoV2 = () => {
     console.log("isPushStreamConnected", isPushStreamConnected);
   }, [isPushStreamConnected, latestVideoEvent]);
 
-  const requestVideoCall = async (recipient) => {
-    await aliceVideoCall.current.request([recipient]);
-  };
-
   const acceptIncomingCall = async () => {
     await aliceVideoCall.current.approve(latestVideoEvent?.peerInfo);
   };
@@ -160,7 +156,10 @@ const VideoV2 = () => {
               )}
             </div>
           ) : (
-            <ConnectButton showBalance={false} />
+            <div className="flex justify-center">
+              {" "}
+              <ConnectButton showBalance={false} />
+            </div>
           )}
         </div>
       </div>
